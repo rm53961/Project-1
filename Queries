@@ -1,2 +1,16 @@
 List the tutor name and what subjects they teach
 SELECT tutor_name,  FROM 
+
+Get the total number of students currently enrolled
+SELECT COUNT(*) AS total_students FROM students;
+
+Retrieve all assignments due next week
+SELECT assignment_title, assignment_due_date
+FROM assignments
+WHERE assignment_due_date BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 7 DAY);
+
+List all tutors along with their expertise
+SELECT tutor_name, tutor_expertise FROM tutors;
+
+
+

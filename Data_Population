@@ -1,1 +1,192 @@
+-- Insert 30 Students
+INSERT INTO students (student_id, student_name, student_phone, student_email, student_grade, student_interests, student_goals)
+VALUES 
+(1, 'Alice Johnson', '123-456-7890', 'alice@example.com', '10', 'Math, Science', 'Improve in Algebra'),
+(2, 'Bob Smith', '234-567-8901', 'bob@example.com', '11', 'History, English', 'Excel in writing'),
+(3, 'Charlie Brown', '345-678-9012', 'charlie@example.com', '9', 'Physics, Robotics', 'Build a robot'),
+(4, 'David Lee', '456-789-0123', 'david@example.com', '12', 'Programming, AI', 'Master Python'),
+(5, 'Sophia Martinez', '567-890-1234', 'sophia@example.com', '11', 'Music, Literature', 'Write a novel'),
+(6, 'Ethan Garcia', '678-901-2345', 'ethan@example.com', '10', 'Math, Engineering', 'Build a bridge model'),
+(7, 'Olivia White', '789-012-3456', 'olivia@example.com', '9', 'Science, Chemistry', 'Win a science fair'),
+(8, 'Michael Harris', '890-123-4567', 'michael@example.com', '12', 'Physics, Astronomy', 'Learn astrophysics basics'),
+(9, 'Jessica Adams', '901-234-5678', 'jessica@example.com', '11', 'Biology, Anatomy', 'Pursue medical school'),
+(10, 'Ryan Thomas', '012-345-6789', 'ryan@example.com', '10', 'Geography, Environment', 'Understand climate change'),
+(11, 'Lily Rodriguez', '123-456-7891', 'lily@example.com', '9', 'Music, Arts', 'Learn to play violin'),
+(12, 'Jack Miller', '890-321-6547', 'jack@example.com', '12', 'Chemistry, Physics', 'Master quantum mechanics'),
+(13, 'Emily Watson', '901-987-6543', 'emily@example.com', '11', 'History, Politics', 'Become a journalist'),
+(14, 'Lucas Rivera', '902-456-1234', 'lucas@example.com', '10', 'Math, Engineering', 'Design a skyscraper'),
+(15, 'Zoe Thompson', '903-555-6789', 'zoe@example.com', '9', 'Science, Biology', 'Win a national science fair'),
+(16, 'Oscar Nelson', '904-234-5678', 'oscar@example.com', '11', 'Music, Arts', 'Compose a symphony'),
+(17, 'Mia Collins', '905-678-9012', 'mia@example.com', '10', 'English, Literature', 'Publish a novel'),
+(18, 'Liam Wright', '906-345-6789', 'liam@example.com', '9', 'Programming, AI', 'Build a chatbot'),
+(19, 'Charlotte King', '907-567-8901', 'charlotte@example.com', '12', 'History, Philosophy', 'Study ancient civilizations'),
+(20, 'Daniel Brooks', '908-123-4567', 'daniel@example.com', '11', 'Physics, Space', 'Work for NASA'),
+(21, 'Ava Evans', '909-987-6543', 'ava@example.com', '10', 'Math, Science', 'Get top marks in calculus'),
+(22, 'Noah Parker', '910-456-1234', 'noah@example.com', '9', 'Biology, Genetics', 'Research DNA structures'),
+(23, 'Sophia Carter', '911-555-6789', 'sophia@example.com', '12', 'Astronomy, Physics', 'Discover a new exoplanet'),
+(24, 'Ethan Lewis', '912-234-5678', 'ethan@example.com', '11', 'Business, Finance', 'Start a financial blog'),
+(25, 'Isabella Ramirez', '913-678-9012', 'isabella@example.com', '10', 'Art, Design', 'Create a clothing brand'),
+(26, 'Mason Reed', '914-345-6789', 'mason@example.com', '9', 'Chemistry, Research', 'Synthesize a new compound'),
+(27, 'Olivia Hughes', '915-567-8901', 'olivia@example.com', '12', 'Music, Piano', 'Perform at Carnegie Hall'),
+(28, 'Benjamin Sanders', '916-123-4567', 'benjamin@example.com', '11', 'Math, Data Science', 'Become a data analyst'),
+(29, 'Emma Ross', '917-987-6543', 'emma@example.com', '10', 'History, Politics', 'Work in international relations'),
+(30, 'Henry Butler', '918-456-1234', 'henry@example.com', '9', 'Physics, Robotics', 'Win a robotics competition');
+
+-- Insert 15 Tutors
+INSERT INTO tutors (tutor_id, tutor_name, tutor_phone, tutor_email, tutor_expertise, tutor_availability, tutor_rate, locations_idlocations)
+VALUES 
+(1, 'John Miller', '555-111-2222', 'john@example.com', 'Math', 'Mon-Wed 4-6PM', 25.00, 1),
+(2, 'Emma Wilson', '555-333-4444', 'emma@example.com', 'Science', 'Tue-Thu 3-5PM', 30.00, 2),
+(3, 'Lucas Green', '555-555-5555', 'lucas@example.com', 'History', 'Mon-Fri 3-6PM', 20.00, 3),
+(4, 'Emily Brown', '555-666-7777', 'emily@example.com', 'English', 'Tue-Thu 2-5PM', 22.50, 1),
+(5, 'Daniel Carter', '555-888-9999', 'daniel@example.com', 'Computer Science', 'Weekends 10AM-2PM', 35.00, 2),
+(6, 'Sophia Clarke', '555-999-1111', 'sophia@example.com', 'Biology', 'Weekends 1-4PM', 28.00, 3),
+(7, 'Nathan Cooper', '555-222-3333', 'nathan@example.com', 'Physics', 'Mon, Wed 5-7PM', 30.00, 1),
+(8, 'Hannah Lewis', '555-444-5555', 'hannah@example.com', 'Geography', 'Tue, Thu 3-6PM', 20.00, 2),
+(9, 'Jonathan Wallace', '555-111-2222', 'jonathan@example.com', 'Math', 'Mon-Wed 4-6PM', 25.00, 1),
+(10, 'Alice Freeman', '555-333-4444', 'alice@example.com', 'Physics', 'Tue-Thu 3-5PM', 30.00, 2),
+(11, 'Grace Patterson', '555-555-6666', 'grace@example.com', 'English', 'Mon-Fri 2-6PM', 22.00, 3),
+(12, 'Mark Spencer', '555-777-8888', 'mark@example.com', 'Chemistry', 'Tue, Thu 5-7PM', 28.00, 1),
+(13, 'David Anderson', '555-999-0000', 'david@example.com', 'Computer Science', 'Weekends 10AM-3PM', 35.00, 2),
+(14, 'Sophia Harris', '555-111-2223', 'sophia.h@example.com', 'History', 'Mon-Wed 1-4PM', 25.00, 1),
+(15, 'Jacob Foster', '555-333-4445', 'jacob@example.com', 'Biology', 'Tue, Thu 2-5PM', 30.00, 2);
+
+---Insert 4 subjects
+INSERT INTO subjects (idsubjects, subject_name, subject_description, tutors_tutor_id)
+VALUES 
+(1, 'Mathematics', 'Algebra, Geometry, Calculus', 1),
+(2, 'Science', 'Biology, Chemistry, Physics', 2),
+(3, 'History', 'World History, US History, European History', 3),
+(4, 'Computer Science', 'Programming, Data Structures, Algorithms', 5);
+
+---Insert 8 assignemnts
+INSERT INTO assignments (idassignments, assignment_title, assignment_description, assignment_due_date, assignment_assigned_on, assignment_status, students_student_id, tutors_tutor_id, subjects_idsubjects, tutoring_sessions_idtutoring_sessions)
+VALUES 
+(1, 'Algebra Homework', 'Solve 20 algebra problems', '2025-03-25', '2025-03-15', 'Pending', 1, 1, 1, 1),
+(2, 'Physics Lab Report', 'Write a report on Newton’s Laws', '2025-03-30', '2025-03-20', 'Completed', 3, 2, 2, 2),
+(3, 'World War II Essay', 'Write a 3-page essay on WWII', '2025-04-10', '2025-03-28', 'Pending', 4, 3, 3, 3),
+(4, 'Python Project', 'Create a basic Python calculator', '2025-04-20', '2025-04-05', 'Ongoing', 6, 5, 4, 5),
+(5, 'Trigonometry Problems', 'Solve 15 trigonometry questions', '2025-04-18', '2025-04-08', 'Pending', 10, 1, 1, 6),
+(6, 'Chemistry Lab', 'Write a reaction report on acids and bases', '2025-04-22', '2025-04-12', 'Pending', 12, 2, 2, 7),
+(7, 'American History Paper', 'Analyze the impact of the Civil War', '2025-04-24', '2025-04-14', 'Pending', 15, 3, 3, 8),
+(8, 'SQL Database Design', 'Create an ER diagram for a library system', '2025-04-26', '2025-04-16', 'Pending', 18, 5, 4, 9);
+
+--Insert 10 tutoring sessions
+INSERT INTO tutoring_sessions (idtutoring_sessions, session_date, session_duration, session_subject, tutors_tutor_id, students_student_id, locations_idlocations)
+VALUES 
+(1, '2025-03-15', 60, 'Mathematics', 1, 1, 1),
+(2, '2025-03-18', 45, 'Science', 2, 3, 2),
+(3, '2025-03-20', 75, 'History', 3, 4, 3),
+(4, '2025-03-22', 90, 'Computer Science', 5, 6, 1),
+(5, '2025-03-25', 60, 'Mathematics', 1, 10, 2),
+(6, '2025-03-28', 45, 'Science', 2, 12, 3),
+(7, '2025-03-30', 75, 'History', 3, 15, 1),
+(8, '2025-04-02', 90, 'Computer Science', 5, 18, 2),
+(9, '2025-04-05', 60, 'Mathematics', 1, 20, 3),
+(10, '2025-04-08', 45, 'Science', 2, 25, 1);
+
+---Insery 3 locations
+INSERT INTO locations (idlocations, location_name, location_address, location_city, location_phone)
+VALUES 
+(1, 'Downtown Learning Center', '123 Main St', 'Atlanta', '404-111-2222'),
+(2, 'West End Study Hub', '456 Elm St', 'Atlanta', '404-333-4444'),
+(3, 'East Side Learning Center', '789 Oak St', 'Atlanta', '404-555-6666');
+
+---Insert 10 staff members 
+INSERT INTO staff (idstaff, staff_name, staff_position, staff_phone, staff_email, locations_idlocations)
+VALUES 
+(1, 'Sarah Connor', 'Admin', '444-555-6666', 'sarah@example.com', 1),
+(2, 'Michael Reed', 'Finance', '777-888-9999', 'michael@example.com', 2),
+(3, 'Rachel Porter', 'Program Director', '555-222-3334', 'rachel@example.com', 3),
+(4, 'Jessica Lopez', 'HR', '111-222-3333', 'jessica@example.com', 1),
+(5, 'Brandon Walker', 'Finance', '888-111-2222', 'brandon@example.com', 2),
+(6, 'Olivia Scott', 'Operations Manager', '777-666-5555', 'olivia@example.com', 3),
+(7, 'Matthew Brooks', 'Coordinator', '666-777-8888', 'matthew@example.com', 1),
+(8, 'Kevin White', 'IT Support', '555-444-9999', 'kevin@example.com', 2),
+(9, 'Samantha Green', 'Marketing Manager', '444-777-5555', 'samantha@example.com', 3),
+(10, 'Daniel Adams', 'Receptionist', '333-222-1111', 'daniel@example.com', 1);
+
+---Insert 30 Feedback Records
+INSERT INTO feedback (idfeedback, feedback_rating, feedback_comments, feedback_date, students_student_id, tutors_tutor_id, tutoring_sessions_idtutoring_sessions)
+VALUES 
+(1, 5, 'Great explanation on calculus!', '2025-03-15', 1, 1, 1),
+(2, 4, 'Helpful but too fast-paced.', '2025-03-18', 3, 2, 2),
+(3, 3, 'Too much theory, needs practical examples.', '2025-03-20', 4, 3, 3),
+(4, 5, 'Best programming session ever!', '2025-03-22', 6, 5, 4),
+(5, 4, 'Tutor explained concepts clearly.', '2025-03-25', 10, 1, 5),
+(6, 2, 'Session lacked engagement.', '2025-03-28', 12, 2, 6),
+(7, 5, 'Awesome history discussion!', '2025-03-30', 15, 3, 7),
+(8, 5, 'Great hands-on SQL practice!', '2025-04-02', 18, 5, 8),
+(9, 3, 'Session was too long.', '2025-04-05', 20, 1, 9),
+(10, 4, 'Physics concepts were well explained.', '2025-04-08', 25, 2, 10),
+(11, 5, 'This session helped me prepare for my test.', '2025-04-10', 4, 1, 5),
+(12, 3, 'Tutor was knowledgeable but session was rushed.', '2025-04-12', 6, 5, 6),
+(13, 4, 'Good but I needed more practice problems.', '2025-04-14', 7, 3, 7),
+(14, 5, 'Amazing session, learned a lot!', '2025-04-16', 9, 2, 8),
+(15, 2, 'Tutor was late, but content was okay.', '2025-04-18', 11, 1, 9),
+(16, 4, 'Very interactive and fun.', '2025-04-20', 13, 2, 10),
+(17, 3, 'Not as detailed as I expected.', '2025-04-22', 16, 3, 1),
+(18, 5, 'Well-structured session.', '2025-04-24', 18, 5, 2),
+(19, 4, 'Good, but needed more examples.', '2025-04-26', 20, 1, 3),
+(20, 5, 'Best tutoring experience ever.', '2025-04-28', 21, 2, 4),
+(21, 2, 'Tutor seemed distracted.', '2025-04-30', 22, 3, 5),
+(22, 4, 'Great improvement in my understanding.', '2025-05-02', 23, 5, 6),
+(23, 3, 'Decent session but could be better.', '2025-05-04', 24, 1, 7),
+(24, 5, 'Tutor was amazing, learned a lot!', '2025-05-06', 26, 2, 8),
+(25, 4, 'Needed more real-world applications.', '2025-05-08', 27, 3, 9),
+(26, 2, 'Did not understand some concepts.', '2025-05-10', 28, 5, 10),
+(27, 5, 'Excellent in-depth tutoring.', '2025-05-12', 29, 1, 1),
+(28, 4, 'Informative session but a bit slow.', '2025-05-14', 30, 2, 2),
+(29, 3, 'The session was okay but needed more detail.', '2025-05-16', 7, 3, 3),
+(30, 5, 'Highly recommend this tutor!', '2025-05-18', 15, 5, 4);
+
+---Insert 30 attendance records
+INSERT INTO attendance (idattendance, attendance_date, attendance_status, tutoring_sessions_idtutoring_sessions, students_student_id)
+VALUES 
+(1, '2025-03-15', 'Present', 1, 1),
+(2, '2025-03-18', 'Present', 2, 3),
+(3, '2025-03-20', 'Absent', 3, 4),
+(4, '2025-03-22', 'Present', 4, 6),
+(5, '2025-03-25', 'Present', 5, 10),
+(6, '2025-03-28', 'Present', 6, 12),
+(7, '2025-03-30', 'Absent', 7, 15),
+(8, '2025-04-02', 'Present', 8, 18),
+(9, '2025-04-05', 'Present', 9, 20),
+(10, '2025-04-08', 'Present', 10, 25),
+(11, '2025-04-10', 'Absent', 5, 4),
+(12, '2025-04-12', 'Present', 6, 6),
+(13, '2025-04-14', 'Absent', 7, 7),
+(14, '2025-04-16', 'Present', 8, 9),
+(15, '2025-04-18', 'Present', 9, 11),
+(16, '2025-04-20', 'Absent', 10, 13),
+(17, '2025-04-22', 'Present', 1, 16),
+(18, '2025-04-24', 'Present', 2, 18),
+(19, '2025-04-26', 'Absent', 3, 20),
+(20, '2025-04-28', 'Present', 4, 21),
+(21, '2025-04-30', 'Present', 5, 22),
+(22, '2025-05-02', 'Absent', 6, 23),
+(23, '2025-05-04', 'Present', 7, 24),
+(24, '2025-05-06', 'Present', 8, 26),
+(25, '2025-05-08', 'Absent', 9, 27),
+(26, '2025-05-10', 'Present', 10, 28),
+(27, '2025-05-12', 'Present', 1, 29),
+(28, '2025-05-14', 'Absent', 2, 30),
+(29, '2025-05-16', 'Present', 3, 7),
+(30, '2025-05-18', 'Present', 4, 15);
+
+---10 payments
+INSERT INTO payments (idpayments, payment_amount, payment_date, tutoring_sessions_idtutoring_sessions, students_student_id, staff_idstaff)
+VALUES 
+(1, 50.00, '2025-03-16', 1, 1, 1),  -- Payment for Session 1
+(2, 45.00, '2025-03-19', 2, 3, 2),  -- Payment for Session 2
+(3, 70.00, '2025-03-21', 3, 4, 3),  -- Payment for Session 3
+(4, 60.00, '2025-03-23', 4, 6, 4),  -- Payment for Session 4
+(5, 50.00, '2025-03-26', 5, 10, 5), -- Payment for Session 5
+(6, 55.00, '2025-03-29', 6, 12, 6), -- Payment for Session 6
+(7, 60.00, '2025-04-01', 7, 15, 7), -- Payment for Session 7
+(8, 65.00, '2025-04-04', 8, 18, 8), -- Payment for Session 8
+(9, 70.00, '2025-04-07', 9, 20, 9), -- Payment for Session 9
+(10, 75.00, '2025-04-10', 10, 25, 10); -- Payment for Session 10
+
+
 

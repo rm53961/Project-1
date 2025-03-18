@@ -1,0 +1,4 @@
+| Column Name  | Description           | Right-aligned |
+| :---         |     :---              |          :--- |
+| git status   | git status            | git status    |
+| git diff     | git diff              | git diff      |

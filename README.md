@@ -15,6 +15,7 @@ The task at hand is to design and build a relational database for our tutoring c
 **DATA MODEL**
 
 <img width="642" alt="Screenshot 2025-03-20 at 5 05 42 PM" src="https://github.com/user-attachments/assets/990a47cf-1801-4939-978f-524506a8b0a2" />
+
 Our data model is structured around a hypothetical tutoring company, Brightpath. The Session entity serves as the central focus of our model, representing one-on-one tutoring sessions between students and tutors. Each session captures essential details, including the tutor, student, subject, location, session duration, and feedback.
 A Tutor works in a specific Location and teaches students in multiple Subjects, which is why we established a one-to-many relationship between Tutors and Subjects. Additionally, tutors conduct multiple Sessions, forming a one-to-many relationship between Tutors and Sessions.
 Each Student participates in multiple Sessions, with their academic progress and engagement tracked through Assignments, Attendance, and Feedback. A one-to-many relationship exists between Students and Assignments, allowing tutors to assign and review work. Similarly, Attendance tracks student participation in sessions, helping monitor engagement.

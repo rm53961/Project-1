@@ -46,7 +46,8 @@ This query helps managers track the number of 11th-grade students and their info
 SELECT * FROM assignment WHERE assignment_status = 'Pending';
 
 
- This query helps managers monitor outstanding assignments. It allows them to identify students who may need additional support or follow-up. If a large number of assignments are pending, it could indicate issues such as poor time management, lack of student engagement, or unclear instructions. This insight can help managers adjust deadlines, provide extra assistance, or intervene early to improve overall student performance. Student success is what drives business for BrightPath tutoring.
+
+ This query helps managers monitor pending assignments. It allows them to identify students who may need additional support when falling behind. If a large number of assignments are pending, it could indicate issues such as poor time management, lack of student engagement, or unclear instructions. This insight can help managers adjust deadlines, provide extra assistance, or intervene early to improve overall student performance. Student success is what drives business for BrightPath tutoring and its important to check for poor performance.
 
 <img width="382" alt="Screenshot 2025-03-20 at 5 31 14 PM" src="https://github.com/user-attachments/assets/e3a06302-7c77-44f4-8373-4c84371cac35" />
 
@@ -92,7 +93,7 @@ JOIN assignment a ON s.student_id = a.student_id
 WHERE a.assignment_status = 'Completed';
 
 
-This query helps managers track student engagement by identifying those who have completed assignments. It aids in monitoring performance, assessing coursework effectiveness, identifying students needing support, and improving resource allocation.
+This query helps managers track student engagement by identifying those who have completed assignments and being able to grab feedback right away. It helps BrightPath look at ways to improve and get everyone's opinions. This helps Bright Path account for everyone since it shows students that completed at least one assignment.
 
 
 <img width="309" alt="Screenshot 2025-03-20 at 5 37 06 PM" src="https://github.com/user-attachments/assets/61188934-9686-4e84-bfb2-17884f87abc1" />
@@ -108,9 +109,7 @@ FROM tutor t
 JOIN subject sub ON t.subject_id = sub.subject_id
 GROUP BY sub.subject_name;
 
-
-This helps managers analyze tutor costs across subjects, set competitive pricing, budget for tutoring services, and ensure fair compensation.
-
+This helps managers analyze tutor costs across subjects, set competitive pricing, budget for tutoring services, and ensure fair compensation. This data can also be used when obtaining more tutors by giving them a recommended price to charge for service.
 
 <img width="325" alt="Screenshot 2025-03-20 at 5 37 45 PM" src="https://github.com/user-attachments/assets/dcc309b2-11fe-4558-b981-37ebb3f4d3b4" />
 
@@ -130,7 +129,7 @@ WHERE f.feedback_rating
 
 
 
-This helps managers identify tutors with poor ratings, assess performance issues, provide training or support, and maintain service quality.
+his helps managers identify tutors with poor ratings, assess performance issues, provide training or support, and maintain service quality. Poor service means less students coming back and its important to catch on to be able to implement change.                   
 
 *This query finds the most popular subject based on the number of tutoring sessions* 
 

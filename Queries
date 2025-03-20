@@ -1,16 +1,60 @@
-List the tutor name and what subjects they teach
-SELECT tutor_name,  FROM 
+Simple Queries
+Retrieve all students in grade 11
+SELECT * FROM student WHERE student_grade = '11';
 
-Get the total number of students currently enrolled
-SELECT COUNT(*) AS total_students FROM students;
+Get all assignments that are pending
+SELECT * FROM assignment WHERE assignment_status = 'Pending';
 
-Retrieve all assignments due next week
-SELECT assignment_title, assignment_due_date
-FROM assignments
-WHERE assignment_due_date BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 7 DAY);
+Count the total number of tutors
+SELECT COUNT(*) AS total_tutors FROM tutor;
 
-List all tutors along with their expertise
-SELECT tutor_name, tutor_expertise FROM tutors;
+Get the names and contact details of all tutors who charge more than $30 per session:
+SELECT tutor_name, tutor_phone, tutor_email 
+FROM tutor 
+WHERE tutor_rate > 30;
 
 
+Complex Queries 
+Find students who have at least one completed assignment
+SELECT DISTINCT s.student_id, s.student_name
+FROM student s
+JOIN assignment a ON s.student_id = a.student_id
+WHERE a.assignment_status = 'Completed';
+
+Get the average tutor rate for each subject
+SELECT sub.subject_name, AVG(t.tutor_rate) AS average_rate
+FROM tutor t
+JOIN subject sub ON t.subject_id = sub.subject_id
+GROUP BY sub.subject_name;
+
+List tutors who have received at least one feedback rating below 3
+SELECT DISTINCT t.tutor_id, t.tutor_name
+FROM tutor t
+JOIN feedback f ON t.tutor_id = f.tutor_id
+WHERE f.feedback_rating < 3;
+
+Find the most popular subject based on the number of tutoring sessions
+SELECT session_subject, COUNT(*) AS session_count
+FROM session
+GROUP BY session_subject
+ORDER BY session_count DESC
+LIMIT 1;
+
+List the tutors who have sessions with students in grade 12 and have received a feedback rating of 4 or higher:
+SELECT DISTINCT t.tutor_name
+FROM tutor t
+JOIN session ses ON t.tutor_id = ses.tutor_id
+JOIN student s ON ses.student_id = s.student_id
+JOIN feedback f ON ses.session_id = f.session_id
+WHERE s.student_grade = '12'
+  AND f.feedback_rating >= 4;
+
+Get the list of sessions held at 'Downtown Learning Center' with a duration of 60 minutes or more:
+SELECT ses.session_date, t.tutor_name, s.student_name, ses.session_duration
+FROM session ses
+JOIN tutor t ON ses.tutor_id = t.tutor_id
+JOIN student s ON ses.student_id = s.student_id
+JOIN location l ON ses.location_id = l.location_id
+WHERE l.location_name = 'Downtown Learning Center'
+  AND ses.session_duration >= 60;
 

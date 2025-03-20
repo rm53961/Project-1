@@ -1,6 +1,5 @@
-# **Team 1 Mist 4610 Group Project 1**|
-Team Name:
-MIST 4610 3:55-5:10 Group 9#
+# **Team 1 Mist 4610 Group Project 1**
+## Team Name:MIST 4610 3:55-5:10 Group 9
 
 ##**Team Members:**
 [Gabriela Rivera](https://github.com/Gcr79540)
@@ -25,9 +24,9 @@ Brightpath also processes Payments for tutoring services. Each Session has an as
 Finally, the Assignment entity allows tutors to assign tasks related to a specific Session and Subject. Each Assignment includes a due date, description, and completion status, ensuring structured learning for students.
 This relational model enables Brightpath to effectively manage tutoring services, track student progress, monitor tutor performance, and optimize session scheduling and revenue generation.
 
-**Queries**
+## **Queries**
  
-**Simple Queries**
+### **Simple Queries**
 
 
 This query retrieves all students who are in grade 11 from the student table.
@@ -86,7 +85,7 @@ This information is useful because it allows managers to compile a list of their
 
 
 
-**Complex Queries** 
+### **Complex Queries** 
 
 
 This query retrieves a list of students who have completed at least one assignment by joining the student and assignment tables. It ensures that only distinct student records appear in the results.

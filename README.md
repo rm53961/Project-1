@@ -1,18 +1,18 @@
- **Team 1 Mist 4610 Group Project 1** |
+#**Team 1 Mist 4610 Group Project 1** |
 Team Name:
 MIST 4610 3:55-5:10 Group 9
 
-**Team Members:**
+##**Team Members:**
 [Gabriela Rivera](https://github.com/Gcr79540)
 [Daniel Yi](https://github.com/dmy17582)
 [Maggie Craig](https://github.com/Maggiecraig108)
 [Rashi Modey](https://github.com/rm53961)
 [John Carr](https://github.com/jac08171)
 
-**Problem Description**
+##**Problem Description**
 The task at hand is to design and build a relational database for our tutoring company, Brightpath. Brightpath offers one-on-one tutoring services across multiple subjects, with tutors working in different locations to assist students in scheduled sessions. The session entity serves as the central entity of our data model, capturing essential details about which tutor is teaching, which student is receiving tutoring, the subject being covered, the session location, and its duration. Supporting entities include tutors, students, subjects, assignments, attendance, feedback, locations, and payments—all interconnected to ensure seamless tracking of tutoring activities. Our goal is to build an accurate and functional database that allows us to generate sample data, populate entities with meaningful attributes, and run queries that provide valuable insights. These insights may include student progress tracking, session scheduling, and payment records to help optimize our tutoring services.
 
-**DATA MODEL**
+##**DATA MODEL**
 
 <img width="642" alt="Screenshot 2025-03-20 at 5 05 42 PM" src="https://github.com/user-attachments/assets/990a47cf-1801-4939-978f-524506a8b0a2" />
 
@@ -25,9 +25,9 @@ Brightpath also processes Payments for tutoring services. Each Session has an as
 Finally, the Assignment entity allows tutors to assign tasks related to a specific Session and Subject. Each Assignment includes a due date, description, and completion status, ensuring structured learning for students.
 This relational model enables Brightpath to effectively manage tutoring services, track student progress, monitor tutor performance, and optimize session scheduling and revenue generation.
 
-**Queries
+**Queries**
  
-Simple Queries**
+**Simple Queries**
 
 
 This query retrieves all students who are in grade 11 from the student table.
@@ -86,7 +86,7 @@ This information is useful because it allows managers to compile a list of their
 
 
 
-Complex Queries 
+**Complex Queries** 
 
 
 This query retrieves a list of students who have completed at least one assignment by joining the student and assignment tables. It ensures that only distinct student records appear in the results.

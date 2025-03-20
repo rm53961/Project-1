@@ -30,7 +30,8 @@ This relational model enables Brightpath to effectively manage tutoring services
 ### **Simple Queries**
 
 
-This query retrieves all students who are in grade 11 from the student table.
+*This query retrieves all students who are in grade 11 from the student table*
+
 SELECT * FROM student WHERE student_grade = '11';
 
 
@@ -40,7 +41,8 @@ This query helps managers track the number of 11th-grade students and their info
 
 
 
-This query retrieves all assignments that are pending. 
+*This query retrieves all assignments that are pending* 
+
 SELECT * FROM assignment WHERE assignment_status = 'Pending';
 
 
@@ -50,14 +52,10 @@ SELECT * FROM assignment WHERE assignment_status = 'Pending';
 
 
 
-
-
-
+*This query ounts the total number of tutors who work at Brightpath*
 
 Count the total number of tutors
 SELECT COUNT(*) AS total_tutors FROM tutor;
-
-Query 1 counts the total number of tutors who work at Brightpath.
 
 
 It allows the managers to see how many tutors they have working at their company. Knowing this information is helpful to the company because they are able to have an accurate view of the labor resources that are available to them. Managers are then able to decide whether they need to hire more tutors to meet an increased demand in the education market. They are also able to forecast whether they will need to hire/fire tutors depending on whether more kids are signing up. This query allows managers to identify where they should allocate resources. 
@@ -68,23 +66,16 @@ It allows the managers to see how many tutors they have working at their company
 
 
 
+*This query gets the names and contact details of all tutors who charge more than $30 per session*
 
-
-
-
-
-
-Get the names and contact details of all tutors who charge more than $30 per session:
 SELECT tutor_name, tutor_phone, tutor_email 
 FROM tutor 
 WHERE tutor_rate > 30;
 
 
-Query 2 lists the name and contact information for all the tutors who charge more than $30 per session a student.
-
-
 This information is useful because it allows managers to compile a list of their tutors who fall on the more expensive end of the spectrum. Managers can recommend specific tutors within their company to certain families who are looking to invest a little extra money in their children’s education, Another benefit of compiling this information is that this can be shared with families who cannot afford expensive tutoring. If a family does not want to spend over $30 per session, then the managers know which tutors to avoid recommending. This will lead to clients feeling like they get personalized options for tutors who meet their specific needs, leading to client satisfaction.
 
+<img width="446" alt="Screenshot 2025-03-20 at 5 35 39 PM" src="https://github.com/user-attachments/assets/3804260f-2b57-4d5c-86cb-93bc415dfee6" />
 
 
 
@@ -92,45 +83,42 @@ This information is useful because it allows managers to compile a list of their
 ### **Complex Queries** 
 
 
-This query retrieves a list of students who have completed at least one assignment by joining the student and assignment tables. It ensures that only distinct student records appear in the results.
+*Find students who have at least one completed assignment* 
 
 
-
-
-Find students who have at least one completed assignment
 SELECT DISTINCT s.student_id, s.student_name
 FROM student s
 JOIN assignment a ON s.student_id = a.student_id
 WHERE a.assignment_status = 'Completed';
 
 
-
 This query helps managers track student engagement by identifying those who have completed assignments. It aids in monitoring performance, assessing coursework effectiveness, identifying students needing support, and improving resource allocation.
 
 
+<img width="309" alt="Screenshot 2025-03-20 at 5 37 06 PM" src="https://github.com/user-attachments/assets/61188934-9686-4e84-bfb2-17884f87abc1" />
 
 
-This query calculates the average tutor rate for each subject by grouping tutors based on the subject they teach.
 
 
-Get the average tutor rate for each subject
+
+*This query calculates the average tutor rate for each subject* 
+
 SELECT sub.subject_name, AVG(t.tutor_rate) AS average_rate
 FROM tutor t
 JOIN subject sub ON t.subject_id = sub.subject_id
 GROUP BY sub.subject_name;
 
 
-
-
-
 This helps managers analyze tutor costs across subjects, set competitive pricing, budget for tutoring services, and ensure fair compensation.
 
 
+<img width="325" alt="Screenshot 2025-03-20 at 5 37 45 PM" src="https://github.com/user-attachments/assets/dcc309b2-11fe-4558-b981-37ebb3f4d3b4" />
 
 
 
 
-This query retrieves tutors who have received at least one low feedback rating (below 3). It ensures that each tutor appears only once in the results.
+
+*This query retrieves tutors who have received at least one low feedback rating (below 3)*
 
 
 List tutors who have received at least one feedback rating below 3
@@ -138,9 +126,14 @@ SELECT DISTINCT t.tutor_id, t.tutor_name
 FROM tutor t JOIN feedback f ON t.tutor_id = f.tutor_id
 WHERE f.feedback_rating 
 
+<img width="400" alt="Screenshot 2025-03-20 at 5 38 17 PM" src="https://github.com/user-attachments/assets/c5dd0ac6-dce5-4bc3-8431-e64dbb29c1b6" />
+
+
+
 This helps managers identify tutors with poor ratings, assess performance issues, provide training or support, and maintain service quality.
 
-Find the most popular subject based on the number of tutoring sessions
+*This query finds the most popular subject based on the number of tutoring sessions* 
+
 SELECT session_subject, COUNT(*) AS session_count
 FROM session GROUP BY session_subject
 HAVING COUNT(*) > (SELECT AVG(session_count)
@@ -155,12 +148,14 @@ Query 8 identifies the most popular subject that students choose to be tutored i
 This information would help managers determine which subject students want the most tutoring in, which also helps them see what is bringing the company the most revenue. Knowing their company’s strengths as well as what services customers and students are most looking forward to will allow Brightpath to make smarter business decisions. For example, if math is a popular subject to be tutored in, then Brightpath will push more marketing efforts towards their math tutors. Also, managers could look at hiring more math tutors to meet the increased demand from students.
 
 
+<img width="405" alt="Screenshot 2025-03-20 at 5 39 36 PM" src="https://github.com/user-attachments/assets/7ec82ba7-c5d7-4737-8bfe-cf153a0d5cfa" />
 
 
 
 
 
 
+*This query helps identify which assignments require paper in order to be completed*
 
 Find assignments whose titles contain the word "Paper"
 SELECT * 
@@ -168,16 +163,17 @@ FROM assignment
 WHERE assignment_title REGEXP '[Pp]aper';
 
 
-This query helps identify which assignments require paper in order to be completed.
 This information could be useful to managers for a number of reasons. If managers anticipate the rise of many paper assignments, they could prepare by buying more paper or ink for their printing equipment. They could also avoid buying more computers or other online resources, which would save them money. This information can also be relayed to parents and students who want to sign up, as some customers would prefer paper assignments over online ones because it helps them learn better and retain information.
 
+<img width="452" alt="Screenshot 2025-03-20 at 5 40 18 PM" src="https://github.com/user-attachments/assets/6734e1f3-0603-4c60-9f1e-18852c5d89ba" />
 
 
 
 
 
 
-Get a list of students who have not completed any assignment
+*This query gives a list of students who have not completed any assignment* 
+
 SELECT * FROM student
 WHERE NOT EXISTS (
 SELECT 1
@@ -189,8 +185,10 @@ WHERE assignment.student_id = student.student_id AND assignment.assignment_statu
 Query 10 depicts a list of students who have not completed any assignments in their time at Brightpath so far. 
 This information is very beneficial to managers because it can either show which students are new to Brightpath or show students who are slacking in their work. For new students, managers can see who has not made any progress yet. For current students, the staff will be able to analyze who is not completing their work and then take further future action accordingly, whether that be to request for additional sessions or direct special, one on one attention to the student in order to determine the cause for incompletion. This way, we can see whether a student is just not completing work, doesn’t understand material, or has another obstacle hindering their ability to work.
 
+<img width="408" alt="Screenshot 2025-03-20 at 5 40 52 PM" src="https://github.com/user-attachments/assets/f85b35da-0b40-40f5-b5bd-a75accb393c5" />
 
-DATA DICTIONARY:
+
+## *DATA DICTIONARY:*
 <img width="747" alt="Screenshot 2025-03-20 at 17 25 50" src="https://github.com/user-attachments/assets/c1603126-492b-45cc-938b-03b07063cea5" />
 
 <img width="745" alt="Screenshot 2025-03-20 at 17 26 01" src="https://github.com/user-attachments/assets/5a8d1dc3-61cb-4a5a-a0d6-5fb18b5e534a" />

@@ -36,6 +36,7 @@ SELECT * FROM student WHERE student_grade = '11';
 
 This query helps managers track the number of 11th-grade students and their information. It can be used for class planning, resource allocation, and monitoring academic goals and interests. From having all the contact information it also makes it easy to see the emails just in case the managers need to send a mass email to students in this grade to give any updates.
 
+<img width="382" alt="Screenshot 2025-03-20 at 5 31 14 PM" src="https://github.com/user-attachments/assets/3b850a6b-d900-4fce-a9d1-b9dcf44a41d1" />
 
 
 
@@ -45,6 +46,7 @@ SELECT * FROM assignment WHERE assignment_status = 'Pending';
 
  This query helps managers monitor outstanding assignments. It allows them to identify students who may need additional support or follow-up. If a large number of assignments are pending, it could indicate issues such as poor time management, lack of student engagement, or unclear instructions. This insight can help managers adjust deadlines, provide extra assistance, or intervene early to improve overall student performance. Student success is what drives business for BrightPath tutoring.
 
+<img width="382" alt="Screenshot 2025-03-20 at 5 31 14 PM" src="https://github.com/user-attachments/assets/e3a06302-7c77-44f4-8373-4c84371cac35" />
 
 
 
@@ -61,6 +63,7 @@ Query 1 counts the total number of tutors who work at Brightpath.
 It allows the managers to see how many tutors they have working at their company. Knowing this information is helpful to the company because they are able to have an accurate view of the labor resources that are available to them. Managers are then able to decide whether they need to hire more tutors to meet an increased demand in the education market. They are also able to forecast whether they will need to hire/fire tutors depending on whether more kids are signing up. This query allows managers to identify where they should allocate resources. 
 
 
+<img width="438" alt="Screenshot 2025-03-20 at 5 32 25 PM" src="https://github.com/user-attachments/assets/ab089036-827c-471d-8e4c-516d0ab8920d" />
 
 
 

@@ -25,9 +25,9 @@ Brightpath also processes Payments for tutoring services. Each Session has an as
 Finally, the Assignment entity allows tutors to assign tasks related to a specific Session and Subject. Each Assignment includes a due date, description, and completion status, ensuring structured learning for students.
 This relational model enables Brightpath to effectively manage tutoring services, track student progress, monitor tutor performance, and optimize session scheduling and revenue generation.
 
-Queries
+**Queries
  
-Simple Queries
+Simple Queries**
 
 
 This query retrieves all students who are in grade 11 from the student table.

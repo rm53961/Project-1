@@ -137,6 +137,56 @@ WHERE f.feedback_rating
 
 This helps managers identify tutors with poor ratings, assess performance issues, provide training or support, and maintain service quality.
 
+Find the most popular subject based on the number of tutoring sessions
+SELECT session_subject, COUNT(*) AS session_count
+FROM session GROUP BY session_subject
+HAVING COUNT(*) > (SELECT AVG(session_count)
+FROM (
+SELECT session_subject, COUNT(*) AS session_count
+FROM session
+GROUP BY session_subject) AS avg_session_count
+);
+
+
+Query 8 identifies the most popular subject that students choose to be tutored in at Brightpath based on which subject has the most people sign up for tutoring.
+This information would help managers determine which subject students want the most tutoring in, which also helps them see what is bringing the company the most revenue. Knowing their company’s strengths as well as what services customers and students are most looking forward to will allow Brightpath to make smarter business decisions. For example, if math is a popular subject to be tutored in, then Brightpath will push more marketing efforts towards their math tutors. Also, managers could look at hiring more math tutors to meet the increased demand from students.
+
+
+
+
+
+
+
+
+
+Find assignments whose titles contain the word "Paper"
+SELECT * 
+FROM assignment
+WHERE assignment_title REGEXP '[Pp]aper';
+
+
+This query helps identify which assignments require paper in order to be completed.
+This information could be useful to managers for a number of reasons. If managers anticipate the rise of many paper assignments, they could prepare by buying more paper or ink for their printing equipment. They could also avoid buying more computers or other online resources, which would save them money. This information can also be relayed to parents and students who want to sign up, as some customers would prefer paper assignments over online ones because it helps them learn better and retain information.
+
+
+
+
+
+
+
+Get a list of students who have not completed any assignment
+SELECT * FROM student
+WHERE NOT EXISTS (
+SELECT 1
+FROM assignment
+WHERE assignment.student_id = student.student_id AND assignment.assignment_status = 'Completed'
+);
+
+
+Query 10 depicts a list of students who have not completed any assignments in their time at Brightpath so far. 
+This information is very beneficial to managers because it can either show which students are new to Brightpath or show students who are slacking in their work. For new students, managers can see who has not made any progress yet. For current students, the staff will be able to analyze who is not completing their work and then take further future action accordingly, whether that be to request for additional sessions or direct special, one on one attention to the student in order to determine the cause for incompletion. This way, we can see whether a student is just not completing work, doesn’t understand material, or has another obstacle hindering their ability to work.
+
+
 DATA DICTIONARY:
 <img width="747" alt="Screenshot 2025-03-20 at 17 25 50" src="https://github.com/user-attachments/assets/c1603126-492b-45cc-938b-03b07063cea5" />
 
@@ -223,52 +273,4 @@ DATA DICTIONARY:
 
 
 
-Find the most popular subject based on the number of tutoring sessions
-SELECT session_subject, COUNT(*) AS session_count
-FROM session GROUP BY session_subject
-HAVING COUNT(*) > (SELECT AVG(session_count)
-FROM (
-SELECT session_subject, COUNT(*) AS session_count
-FROM session
-GROUP BY session_subject) AS avg_session_count
-);
-
-
-Query 8 identifies the most popular subject that students choose to be tutored in at Brightpath based on which subject has the most people sign up for tutoring.
-This information would help managers determine which subject students want the most tutoring in, which also helps them see what is bringing the company the most revenue. Knowing their company’s strengths as well as what services customers and students are most looking forward to will allow Brightpath to make smarter business decisions. For example, if math is a popular subject to be tutored in, then Brightpath will push more marketing efforts towards their math tutors. Also, managers could look at hiring more math tutors to meet the increased demand from students.
-
-
-
-
-
-
-
-
-
-Find assignments whose titles contain the word "Paper"
-SELECT * 
-FROM assignment
-WHERE assignment_title REGEXP '[Pp]aper';
-
-
-This query helps identify which assignments require paper in order to be completed.
-This information could be useful to managers for a number of reasons. If managers anticipate the rise of many paper assignments, they could prepare by buying more paper or ink for their printing equipment. They could also avoid buying more computers or other online resources, which would save them money. This information can also be relayed to parents and students who want to sign up, as some customers would prefer paper assignments over online ones because it helps them learn better and retain information.
-
-
-
-
-
-
-
-Get a list of students who have not completed any assignment
-SELECT * FROM student
-WHERE NOT EXISTS (
-SELECT 1
-FROM assignment
-WHERE assignment.student_id = student.student_id AND assignment.assignment_status = 'Completed'
-);
-
-
-Query 10 depicts a list of students who have not completed any assignments in their time at Brightpath so far. 
-This information is very beneficial to managers because it can either show which students are new to Brightpath or show students who are slacking in their work. For new students, managers can see who has not made any progress yet. For current students, the staff will be able to analyze who is not completing their work and then take further future action accordingly, whether that be to request for additional sessions or direct special, one on one attention to the student in order to determine the cause for incompletion. This way, we can see whether a student is just not completing work, doesn’t understand material, or has another obstacle hindering their ability to work.
 

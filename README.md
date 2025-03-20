@@ -1,4 +1,4 @@
- **Team 1 Mist 4610 Group Project 1**
+ **Team 1 Mist 4610 Group Project 1** |
 Team Name:
 MIST 4610 3:55-5:10 Group 9
 

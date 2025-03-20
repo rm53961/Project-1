@@ -1,7 +1,7 @@
 # **Team 1 Mist 4610 Group Project 1**
 ## Team Name:MIST 4610 3:55-5:10 Group 9
 
-##**Team Members:**
+## **Team Members:**
 [Gabriela Rivera](https://github.com/Gcr79540)
 [Daniel Yi](https://github.com/dmy17582)
 [Maggie Craig](https://github.com/Maggiecraig108)

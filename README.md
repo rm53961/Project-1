@@ -136,10 +136,27 @@ WHERE f.feedback_rating
 
 This helps managers identify tutors with poor ratings, assess performance issues, provide training or support, and maintain service quality.
 
+DATA DICTIONARY:
+<img width="747" alt="Screenshot 2025-03-20 at 17 25 50" src="https://github.com/user-attachments/assets/c1603126-492b-45cc-938b-03b07063cea5" />
 
+<img width="745" alt="Screenshot 2025-03-20 at 17 26 01" src="https://github.com/user-attachments/assets/5a8d1dc3-61cb-4a5a-a0d6-5fb18b5e534a" />
+<img width="726" alt="Screenshot 2025-03-20 at 17 26 15" src="https://github.com/user-attachments/assets/f14f5b16-6229-458d-aa6d-0014b429f07f" />
 
+<img width="740" alt="Screenshot 2025-03-20 at 17 26 42" src="https://github.com/user-attachments/assets/67f9ed9e-4741-4359-9875-8c05463ff10a" />
 
+<img width="737" alt="Screenshot 2025-03-20 at 17 27 01" src="https://github.com/user-attachments/assets/95cef90f-ff47-4781-b1b1-41ab99a3377a" />
 
+<img width="730" alt="Screenshot 2025-03-20 at 17 27 12" src="https://github.com/user-attachments/assets/d0da2fd6-bd75-4b41-b4bf-ee4f8a18b735" />
+
+<img width="739" alt="Screenshot 2025-03-20 at 17 27 20" src="https://github.com/user-attachments/assets/af6e8690-5e90-46af-9144-2cbab5e0fc41" />
+
+<img width="730" alt="Screenshot 2025-03-20 at 17 27 30" src="https://github.com/user-attachments/assets/de54f530-6f06-40e5-9dbb-d66ee07e8e53" />
+
+<img width="730" alt="Screenshot 2025-03-20 at 17 27 37" src="https://github.com/user-attachments/assets/f28e407b-5c4a-4f2f-af61-6259bb80e40d" />
+
+<img width="738" alt="Screenshot 2025-03-20 at 17 27 43" src="https://github.com/user-attachments/assets/81526614-a9cd-48fc-b7d7-1055fff52cb7" />
+
+<img width="721" alt="Screenshot 2025-03-20 at 17 27 50" src="https://github.com/user-attachments/assets/a9df1060-0c74-4435-9147-2b278072dcc7" />
 
 
 

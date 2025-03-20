@@ -29,32 +29,32 @@ GROUP BY sub.subject_name;
 
 List tutors who have received at least one feedback rating below 3
 SELECT DISTINCT t.tutor_id, t.tutor_name
-FROM tutor t
-JOIN feedback f ON t.tutor_id = f.tutor_id
-WHERE f.feedback_rating < 3;
+FROM tutor t WHERE EXISTS (SELECT 1
+FROM feedback f
+WHERE f.tutor_id = t.tutor_id
+AND f.feedback_rating < 3)
+AND t.tutor_name REGEXP '^A';  
 
 Find the most popular subject based on the number of tutoring sessions
 SELECT session_subject, COUNT(*) AS session_count
+FROM session GROUP BY session_subject
+HAVING COUNT(*) > (SELECT AVG(session_count)
+FROM (
+SELECT session_subject, COUNT(*) AS session_count
 FROM session
-GROUP BY session_subject
-ORDER BY session_count DESC
-LIMIT 1;
+GROUP BY session_subject) AS avg_session_count
+);
 
-List the tutors who have sessions with students in grade 12 and have received a feedback rating of 4 or higher:
-SELECT DISTINCT t.tutor_name
-FROM tutor t
-JOIN session ses ON t.tutor_id = ses.tutor_id
-JOIN student s ON ses.student_id = s.student_id
-JOIN feedback f ON ses.session_id = f.session_id
-WHERE s.student_grade = '12'
-  AND f.feedback_rating >= 4;
+Find assignments whose titles contain the word "Paper"
+SELECT * 
+FROM assignment
+WHERE assignment_title REGEXP '[Pp]aper';
 
-Get the list of sessions held at 'Downtown Learning Center' with a duration of 60 minutes or more:
-SELECT ses.session_date, t.tutor_name, s.student_name, ses.session_duration
-FROM session ses
-JOIN tutor t ON ses.tutor_id = t.tutor_id
-JOIN student s ON ses.student_id = s.student_id
-JOIN location l ON ses.location_id = l.location_id
-WHERE l.location_name = 'Downtown Learning Center'
-  AND ses.session_duration >= 60;
+Get a list of students who have not completed any assignment
+SELECT * FROM student
+WHERE NOT EXISTS (
+SELECT 1
+FROM assignment
+WHERE assignment.student_id = student.student_id AND assignment.assignment_status = 'Completed'
+);
 

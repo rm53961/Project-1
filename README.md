@@ -6,7 +6,7 @@ MIST 4610 3:55-5:10 Group 9
 Gabriela Rivera gcr79540@uga.edu
 Daniel Yi @angelmarsh
 Maggie Craig @rileydoggett
-Rashi Modey @ripleykurtz
+Rashi Modey @rm53961@uga.edu
 John Carr @sequoyethsimpson
 
 **Problem Description**

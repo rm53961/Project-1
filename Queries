@@ -1,6 +1,9 @@
 Simple Queries
 Retrieve all students in grade 11
 SELECT * FROM student WHERE student_grade = '11';
+This query retrieves all students who are in grade 11 from the student table.
+This query helps managers track the number of 11th-grade students and their information. It can be used for class planning, resource allocation, and monitoring academic goals and interests. From having all the contact information it also makes it easy to see the emails just in case the managers need to send a mass email to students in this grade to give any updates.
+
 
 Get all assignments that are pending
 SELECT * FROM assignment WHERE assignment_status = 'Pending';

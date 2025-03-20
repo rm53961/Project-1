@@ -3,34 +3,38 @@
 
 **Team Members:**
 
-[Gabriela Rivera](https://github.com/Gcr79540)
-[Daniel Yi](https://github.com/dmy17582)
-[Maggie Craig](https://github.com/Maggiecraig108)
-[Rashi Modey](https://github.com/rm53961)
-[John Carr](https://github.com/jac08171)
+1) Gabriela Rivera [@Gcr79540](https://github.com/Gcr79540)
+2) Daniel Yi [@dmy17582](https://github.com/dmy17582)
+3) Maggie Craig [@Maggiecraig108](https://github.com/Maggiecraig108)
+4) Rashi Modey [@rm53961](https://github.com/rm53961)
+5) John Carr [@jac08171](https://github.com/jac08171)
 
 ## **Problem Description**
 The task at hand is to design and build a relational database for our tutoring company, Brightpath. Brightpath offers one-on-one tutoring services across multiple subjects, with tutors working in different locations to assist students in scheduled sessions. The session entity serves as the central entity of our data model, capturing essential details about which tutor is teaching, which student is receiving tutoring, the subject being covered, the session location, and its duration. Supporting entities include tutors, students, subjects, assignments, attendance, feedback, locations, and payments—all interconnected to ensure seamless tracking of tutoring activities. Our goal is to build an accurate and functional database that allows us to generate sample data, populate entities with meaningful attributes, and run queries that provide valuable insights. These insights may include student progress tracking, session scheduling, and payment records to help optimize our tutoring services.
 
 ## **Data Model**
 
-<img width="642" alt="Screenshot 2025-03-20 at 5 05 42 PM" src="https://github.com/user-attachments/assets/990a47cf-1801-4939-978f-524506a8b0a2" />
+<img width="600" alt="Screenshot 2025-03-20 at 5 05 42 PM" src="https://github.com/user-attachments/assets/990a47cf-1801-4939-978f-524506a8b0a2" />
 
 Our data model is structured around a hypothetical tutoring company, Brightpath. The Session entity serves as the central focus of our model, representing one-on-one tutoring sessions between students and tutors. Each session captures essential details, including the tutor, student, subject, location, session duration, and feedback.
+
 A Tutor works in a specific Location and teaches students in multiple Subjects, which is why we established a one-to-many relationship between Tutors and Subjects. Additionally, tutors conduct multiple Sessions, forming a one-to-many relationship between Tutors and Sessions.
 Each Student participates in multiple Sessions, with their academic progress and engagement tracked through Assignments, Attendance, and Feedback. A one-to-many relationship exists between Students and Assignments, allowing tutors to assign and review work. Similarly, Attendance tracks student participation in sessions, helping monitor engagement.
+
 Brightpath operates in various locations, so we created a Location entity containing address, city, and contact details. Since each Tutor and Session takes place at a specific location, we established relationships between the Location, Tutors, and Sessions.
 To evaluate performance and gather insights, we included a Feedback entity. Tutors provide feedback on student progress, and students can also review their learning experiences. The Feedback entity links to both Tutors and Sessions, ensuring a structured approach to tracking educational outcomes.
+
 Brightpath also processes Payments for tutoring services. Each Session has an associated Payment record, capturing payment amount, date, and method. This enables tracking of revenue and ensures that payments are linked to completed sessions.
+
 Finally, the Assignment entity allows tutors to assign tasks related to a specific Session and Subject. Each Assignment includes a due date, description, and completion status, ensuring structured learning for students.
 This relational model enables Brightpath to effectively manage tutoring services, track student progress, monitor tutor performance, and optimize session scheduling and revenue generation.
 
 ## **Queries**
  
-### **Simple Queries**
+## **Simple Queries**
 
 
-*This query retrieves all students who are in grade 11 from the student table*
+### 1) *This query retrieves all students who are in grade 11 from the student table*
 
 SELECT * FROM student WHERE student_grade = '11';
 
@@ -41,7 +45,12 @@ This query helps managers track the number of 11th-grade students and their info
 
 
 
-*This query retrieves all assignments that are pending* 
+
+
+
+
+
+### 2) *This query retrieves all assignments that are pending* 
 
 SELECT * FROM assignment WHERE assignment_status = 'Pending';
 
@@ -53,7 +62,7 @@ SELECT * FROM assignment WHERE assignment_status = 'Pending';
 
 
 
-*This query ounts the total number of tutors who work at Brightpath*
+### 3) *This query ounts the total number of tutors who work at Brightpath*
 
 Count the total number of tutors
 SELECT COUNT(*) AS total_tutors FROM tutor;
@@ -67,7 +76,7 @@ It allows the managers to see how many tutors they have working at their company
 
 
 
-*This query gets the names and contact details of all tutors who charge more than $30 per session*
+### 4) *This query gets the names and contact details of all tutors who charge more than $30 per session*
 
 SELECT tutor_name, tutor_phone, tutor_email 
 FROM tutor 
@@ -81,10 +90,10 @@ This information is useful because it allows managers to compile a list of their
 
 
 
-### **Complex Queries** 
+## **Complex Queries** 
 
 
-*Find students who have at least one completed assignment* 
+### 5) *Find students who have at least one completed assignment* 
 
 
 SELECT DISTINCT s.student_id, s.student_name
@@ -102,7 +111,7 @@ This query helps managers track student engagement by identifying those who have
 
 
 
-*This query calculates the average tutor rate for each subject* 
+### 6) *This query calculates the average tutor rate for each subject* 
 
 SELECT sub.subject_name, AVG(t.tutor_rate) AS average_rate
 FROM tutor t
@@ -117,7 +126,7 @@ This helps managers analyze tutor costs across subjects, set competitive pricing
 
 
 
-*This query retrieves tutors who have received at least one low feedback rating (below 3)*
+### 7) *This query retrieves tutors who have received at least one low feedback rating (below 3)*
 
 
 List tutors who have received at least one feedback rating below 3
@@ -133,7 +142,7 @@ This helps managers identify tutors with poor ratings, assess performance issues
 
                    
 
-*This query finds the most popular subject based on the number of tutoring sessions* 
+### 8) *This query finds the most popular subject based on the number of tutoring sessions* 
 
 SELECT session_subject, COUNT(*) AS session_count
 FROM session GROUP BY session_subject
@@ -156,7 +165,7 @@ This information would help managers determine which subject students want the m
 
 
 
-*This query helps identify which assignments require paper in order to be completed*
+### 9) *This query helps identify which assignments require paper in order to be completed*
 
 Find assignments whose titles contain the word "Paper"
 SELECT * 
@@ -173,7 +182,7 @@ This information could be useful to managers for a number of reasons. If manager
 
 
 
-*This query gives a list of students who have not completed any assignment* 
+### 10) *This query gives a list of students who have not completed any assignment* 
 
 SELECT * FROM student
 WHERE NOT EXISTS (
@@ -189,7 +198,7 @@ This information is very beneficial to managers because it can either show which
 <img width="408" alt="Screenshot 2025-03-20 at 5 40 52 PM" src="https://github.com/user-attachments/assets/f85b35da-0b40-40f5-b5bd-a75accb393c5" />
 
 
-## *DATA DICTIONARY:*
+## *Data Dictionary:*
 <img width="747" alt="Screenshot 2025-03-20 at 17 25 50" src="https://github.com/user-attachments/assets/c1603126-492b-45cc-938b-03b07063cea5" />
 
 <img width="745" alt="Screenshot 2025-03-20 at 17 26 01" src="https://github.com/user-attachments/assets/5a8d1dc3-61cb-4a5a-a0d6-5fb18b5e534a" />

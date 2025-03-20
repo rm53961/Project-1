@@ -125,11 +125,13 @@ SELECT DISTINCT t.tutor_id, t.tutor_name
 FROM tutor t JOIN feedback f ON t.tutor_id = f.tutor_id
 WHERE f.feedback_rating 
 
+
+This helps managers identify tutors with poor ratings, assess performance issues, provide training or support, and maintain service quality. Poor service means less students coming back and its important to catch on to be able to implement change.
+
 <img width="400" alt="Screenshot 2025-03-20 at 5 38 17 PM" src="https://github.com/user-attachments/assets/c5dd0ac6-dce5-4bc3-8431-e64dbb29c1b6" />
 
 
-
-his helps managers identify tutors with poor ratings, assess performance issues, provide training or support, and maintain service quality. Poor service means less students coming back and its important to catch on to be able to implement change.                   
+                   
 
 *This query finds the most popular subject based on the number of tutoring sessions* 
 

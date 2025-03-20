@@ -1,5 +1,4 @@
-# **Team 1 Mist 4610 Group Project 1**
-## MIST 4610 3:55-5:10 Group 9
+# MIST 4610 21484 Group 9 Project
 
 **Team Members:**
 
@@ -220,6 +219,13 @@ This information is very beneficial to managers because it can either show which
 
 <img width="721" alt="Screenshot 2025-03-20 at 17 27 50" src="https://github.com/user-attachments/assets/a9df1060-0c74-4435-9147-2b278072dcc7" />
 
+
+## Database Information:
+
+Name of the database: al_group_21484_g9
+
+##
+Thanks for reading!
 
 
 
